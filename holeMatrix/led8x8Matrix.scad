@@ -65,7 +65,7 @@ module led_matrix(width, height, hole_d)
   difference()
   {
     square(calc_surface_width(), calc_surface_height());
-    led_row(width, height, hole_d);
+    led_row(width, height, hole_d, $fn=50);
   }
 }
 
