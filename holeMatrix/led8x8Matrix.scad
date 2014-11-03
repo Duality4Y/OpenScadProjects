@@ -25,7 +25,7 @@ module led_col(width, hole_d)
 	
 	//calculate the x position for every led/hole circle.
 	function calc_x(variable) = 
-		(((variable*hole_d)+variable*spacing)-hole_d/2);
+		( ( (variable*hole_d)+variable*spacing)-hole_d/2);
 	
 	//use a loop to place the cylinders one for one.
 	for(i = [1:width])
@@ -38,7 +38,7 @@ module led_col(width, hole_d)
 module led_row(width, height, hole_d)
 {
   function calc_y(variable) = 
-    (((variable*hole_d)+variable*spacing)-hole_d/2);
+    ( ( (variable*hole_d)+variable*spacing)-hole_d/2);
     
   for(i = [1:height])
   {
@@ -51,10 +51,10 @@ module led_matrix(width, height, hole_d)
 {
   //calculate the with of the surface to extrude the holes from
   function calc_surface_width() = 
-    (width*hole_d+(width*spacing)+spacing);
+    ( width*hole_d+(width*spacing)+spacing);
   //also for the height of that surface.
   function calc_surface_height() = 
-    (height*hole_d+(height*spacing)+spacing);
+    ( height*hole_d+(height*spacing)+spacing);
   
   echo("width: ");
   echo(calc_surface_width());
@@ -65,7 +65,7 @@ module led_matrix(width, height, hole_d)
   difference()
   {
     square(calc_surface_width(), calc_surface_height());
-    led_row(width, height, hole_d, $fn=50);
+    led_row(width, height, hole_d, $fn=30);
   }
 }
 
